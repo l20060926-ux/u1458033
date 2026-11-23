@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3"><title>小雞打工｜下個班，快速找到</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#top"><span class="brand-mark">🐣</span><span>小雞打工<small>CHICK GIG</small></span></a><nav><a href="#jobs">找打工</a><a href="#tips">求職小提醒</a></nav><a class="top-cta" href="#jobs">開始找工作 <span>↗</span></a></header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span></span> 給剛畢業的你，第一份打工不用等</div><h1>下個班，<em>快速找到。</em></h1><p>免經驗、短期、彈性班。<br>找到適合你的第一份工作，現在就開始。</p>
+        <form class="search" id="searchForm"><span class="search-icon">⌕</span><input id="searchInput" placeholder="想找什麼？試試「咖啡店」或「週末」" aria-label="搜尋工作"><button>搜尋職缺 <span>→</span></button></form>
+        <div class="popular"><span>熱門搜尋</span><button data-search="暑期短期">暑期短期</button><button data-search="週末">週末</button><button data-search="咖啡店">咖啡店</button></div>
+      </div>
+      <div class="hero-art"><div class="sun"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-chick">🐥</div><div class="float-card pay-card"><span class="mini-icon">↗</span><span><b>平均時薪</b><strong>NT$ 208</strong></span></div><div class="float-card match-card"><span class="match-check">✓</span><span><b>新手友善</b><small>第一份工作也 OK</small></span></div><div class="art-label">GOOD THINGS<br>START HERE <i>✳</i></div></div>
+      <div class="hero-bottom"><span>01 — FIND YOUR GIG</span><span>滑一下，找到你的下一站 ↓</span></div>
+    </section>
+    <section class="jobs-section" id="jobs"><div class="section-head"><div><div class="eyebrow"><span></span> CURATED FOR YOU</div><h2>今天，<em>有好工作。</em></h2></div><div class="job-count"><b id="count">—</b> 個適合你的機會</div></div>
+      <div class="filters"><button class="filter active" data-filter="">全部職缺</button><button class="filter" data-filter="no_experience">✳ 免經驗</button><button class="filter" data-filter="short_term">☀ 暑期短期</button><button class="filter" data-filter="high_pay">↗ 高時薪 200+</button><button class="filter" data-filter="flexible">◷ 週末 / 彈性</button><select id="category" aria-label="職缺類別"><option value="全部">所有類別</option></select><select id="sort" aria-label="排序方式"><option value="newest">最新上架</option><option value="pay_desc">時薪最高</option></select></div>
+      <div class="results-line"><span id="resultLabel">為你找到合適的工作</span><button id="clearFilters" class="clear">清除篩選 ×</button></div><div class="job-grid" id="jobGrid"><div class="loading">正在為你找好工作…</div></div>
+    </section>
+    <section class="tip-section" id="tips"><div class="tip-icon">✳</div><div><div class="eyebrow">A LITTLE HEADS-UP</div><h2>第一份打工，<em>安心最重要。</em></h2><p id="tipText">正在準備求職小提醒…</p></div><a href="#jobs" class="tip-link">繼續找工作 <span>→</span></a></section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark">🐣</span><span>小雞打工<small>CHICK GIG</small></span></a><span>Make your first move. © 2026 Chick Gig</span><button id="resetDemo">重置示範資料</button></footer>
+  <dialog id="applyDialog"><form method="dialog" id="applyForm"><button class="dialog-close" value="cancel" aria-label="關閉">×</button><div class="eyebrow"><span></span> QUICK APPLY</div><h2>準備好出發了嗎？</h2><p id="applyTitle" class="apply-subtitle"></p><label>你的暱稱<input name="applicant" maxlength="30" value="同學" required></label><label>可開始上班時間 / 備註<select name="available_note"><option>近期可開始，時間可再討論</option><option>下週可以開始</option><option>暑假期間都可以</option><option>週末可以排班</option></select></label><div class="dialog-actions"><button class="cancel" value="cancel">再看看</button><button class="submit" id="applySubmit" value="default">送出應徵 <span>→</span></button></div></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
